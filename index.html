@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>The Reserve at Ochoco</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">FLOOR PLANS</a></li>
+        <li><a href="#">FEATURES</a></li>
+      </ul>
+      <div class="center-logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="location">
+        <img src="location-icon.png" alt="Location" />
+        <span>PRINEVILLE, OREGON</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="intro">
+      <h1>THE RESERVE AT OCHOCO</h1>
+      <p>The Reserve At Ochoco is a stunning living community in Prineville, Oregon. Discover the simplicity of modern living.</p>
+    </div>
+  
+    <!-- Form Section -->
+    <div class="form-section">
+      <form>
+        <h2><span>JOIN</span> OUR WAITING LIST</h2>
+        
+        <label for="name">YOUR NAME</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+  
+        <label for="phone">PHONE</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+  
+        <label for="email">YOUR EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+  
+        <label for="interest">WHAT ARE YOU INTERESTED IN?</label>
+        <input type="text" id="interest" name="interest" placeholder="Enter your interests" required />
+  
+        <button type="submit">SEND REQUEST</button>
+      </form>
+    </div>
+  </section>
+  
+
+  <!-- Floor Plans Section -->
+  <section class="floor-plans">
+    <h1><span>FLOOR</span> <br>PLANS</h1>
+    <div class="plan-tabs">
+      <button class="active">STUDIO</button>
+      <button>1 BEDROOM</button>
+      <button>2 BEDROOM</button>
+      <button>2 BEDROOM DELUXE</button>
+      <button>3 BEDROOM</button>
+    </div>
+    <div class="plan-content">
+      <img src="studio.png" alt="Studio Floor Plan" />
+      <div class="plan-description">
+        <p>Embrace modern living with convenient amenities and a welcoming community atmosphere. Perfectly designed for comfort and style, these studio homes offer an ideal retreat after a long day. Explore all that Prineville has to offer while enjoying the serenity of your own space. Your new home awaits!</p>
+        <button>SCHEDULE</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="features-slider">
+    <div class="slide active" id="fitness">
+      <img src="24-hour-fitness.jpg" alt="24-Hour Fitness">
+      <div class="content">
+        <h2>BUILDING FEATURES</h2>
+        <h3>24-HOUR FITNESS</h3>
+        <p>Stay active with our state-of-the-art fitness center available 24/7 for your convenience.</p>
+      </div>
+    </div>
+  
+    <div class="slide" id="dog-park">
+      <img src="dog-park.jpg" alt="Dog Park">
+      <div class="content">
+        <h2>BUILDING FEATURES</h2>
+        <h3>DOG PARK</h3>
+        <p>Our pet-friendly apartment community features a fantastic dog park where your furry friends can run wild and make new pals!</p>
+      </div>
+    </div>
+  
+    <div class="slide" id="gated-community">
+      <img src="gated-community.jpg" alt="Gated Community">
+      <div class="content">
+        <h2>BUILDING FEATURES</h2>
+        <h3>GATED COMMUNITY</h3>
+        <p>Experience peace of mind with our secure, gated community for your safety and privacy.</p>
+      </div>
+    </div>
+  
+    <div class="slide" id="fire-pit-lounges">
+      <img src="fire-pit-lounges.jpg" alt="Fire Pit Lounges">
+      <div class="content">
+        <h2>BUILDING FEATURES</h2>
+        <h3>FIRE PIT LOUNGES</h3>
+        <p>Relax and unwind by our beautiful outdoor fire pit lounges, perfect for gatherings.</p>
+      </div>
+    </div>
+  
+    <div class="slide" id="luxer-one-package">
+      <img src="luxer-one-package.png" alt="Luxer One Package">
+      <div class="content">
+        <h2>BUILDING FEATURES</h2>
+        <h3>LUXER ONE PACKAGE</h3>
+        <p>Experience seamless convenience with our Luxer One package holder for secure and accessible deliveries.</p>
+      </div>
+    </div>
+  
+    <!-- Arrows -->
+    <button class="arrow left" onclick="prevSlide()">&#8592;</button>
+    <button class="arrow right" onclick="nextSlide()">&#8594;</button>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <!-- Left Section for Copyright -->
+      <div class="left-section">
+        <p>© 2025 The Reserve At Ochoco.</p>
+      </div>
+  
+      <!-- Center Section for Logo and Menu -->
+      <div class="center-section">
+        <img src="logo.png" alt="The Reserve At Ochoco" class="footer-logo" />
+        <nav class="footer-menu">
+          <a href="#">HOME</a>
+          <a href="#">FLOOR PLANS</a>
+          <a href="#">FEATURES</a>
+        </nav>
+      </div>
+  
+      <!-- Right Section for Icons -->
+      <div class="right-section">
+        <img src="accessibility-icon.png" alt="Accessibility" />
+        <img src="equal-housing-icon.png" alt="Equal Housing Opportunity" />
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.plan-tabs button');
+  const image = document.querySelector('.plan-content img');
+  const description = document.querySelector('.plan-description p');
+
+  // Data for each floor plan
+  const floorPlans = {
+    'STUDIO': {
+      img: 'studio.png',
+      description: 'Embrace modern living with convenient amenities and a welcoming community atmosphere. Perfectly designed for comfort and style, these studio homes offer an ideal retreat after a long day.'
+    },
+    '1 BEDROOM': {
+      img: '1-bedroom.png',
+      description: 'Enjoy a cozy space with a spacious bedroom and open living concept. Ideal for singles or couples seeking a comfortable home.'
+    },
+    '2 BEDROOM': {
+      img: '2-bedroom.png',
+      description: 'Perfect for small families or roommates, this layout offers ample living space and a functional kitchen with modern amenities.'
+    },
+    '2 BEDROOM DELUXE': {
+      img: '2-bedroom-dulex.png',
+      description: 'Experience luxury living with added space and upgraded finishes. The deluxe floor plan is designed for those who appreciate comfort and style.'
+    },
+    '3 BEDROOM': {
+      img: '3-bedroom.png',
+      description: 'A spacious and elegant layout ideal for larger families. Featuring generous living spaces, multiple bedrooms, and an upgraded kitchen.'
+    }
+  };
+
+  // Event listener for switching plans
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Update the image and description
+      const planType = button.textContent;
+      if (floorPlans[planType]) {
+        image.src = floorPlans[planType].img;
+        description.textContent = floorPlans[planType].description;
+      }
+    });
+  });
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+
+
+
+</script>
+</html>
